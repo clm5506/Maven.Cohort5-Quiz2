@@ -9,13 +9,12 @@ public class IntegerArrayUtilities {
     }
 
     public Integer[] range(int start, int stop) {
-        Integer[] ans = 
+        Integer[] ans = new Integer[stop+1];
 
-        for(int i = start; i < stop; i++){
-
+        for(int i = start; i <= stop; i++){
+            ans[i] = i;
         }
-
-        return null;
+        return ans;
     }
 
     public Integer getSumOfFirstTwo(Integer[] array) {
