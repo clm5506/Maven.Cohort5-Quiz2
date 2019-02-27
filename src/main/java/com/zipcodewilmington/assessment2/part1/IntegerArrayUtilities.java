@@ -9,21 +9,26 @@ public class IntegerArrayUtilities {
     }
 
     public Integer[] range(int start, int stop) {
-        Integer[] ans = new Integer[stop+1];
+        Integer[] ans = new Integer[(stop-start)+1];
+      //  Integer[] ans = new Integer[stop];
 
         for(int i = start; i <= stop; i++){
-            ans[i] = i;
+           ans[i] = i;
         }
         return ans;
     }
 
     public Integer getSumOfFirstTwo(Integer[] array) {
+        Integer a = array[0];
+        Integer b = array[1];
 
-        return null;
+        return a+b;
     }
 
     public Integer getProductOfFirstTwo(Integer[] array) {
+        Integer a = array[0];
+        Integer b = array[1];
 
-        return null;
+        return a*b;
     }
 }
