@@ -41,6 +41,7 @@ public class RangeTest {
         // when
         Integer[] actual = integerArrayUtilities.range(start, stop);
 
+
         // then
         TestUtils.assertArrayEquals(expected, actual);
     }

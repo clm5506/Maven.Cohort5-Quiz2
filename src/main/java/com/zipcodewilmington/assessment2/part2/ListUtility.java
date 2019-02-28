@@ -6,13 +6,15 @@ import java.util.*;
 
 
 public class ListUtility {
-    List answer= new ArrayList();
+    ArrayList<Integer> answer = new ArrayList<>();
+//
+//    public ListUtility(){
+//        answer = new ArrayList();
+//    }
 
 
-    public Boolean add(int i) {
-
-        Integer a = i;
-        return answer.add(a);
+    public Boolean add(Integer i) {
+        return answer.add(i);
     }
 
     public Integer size() {
@@ -22,6 +24,7 @@ public class ListUtility {
     public List<Integer> getUnique() {
 
       //  List<Integer> answer = new HashSet<Integer>(answer);
+
         return null;
     }
 
@@ -32,17 +35,17 @@ public class ListUtility {
     public Integer mostCommon() {
 
         ArrayUtility ar = new ArrayUtility();
-        List<Object> list = new ArrayList<>(Arrays.asList(answer));
+        //List<Object> list = new ArrayList<>(Arrays.asList(answer));
 
-
-      //  return ar.mostCommon( answer.toArray(new Integer[answer.size()]));
-        return null;
+        Integer[] newIntArr = new Integer[answer.size()];
+        return ar.mostCommon( answer.toArray(newIntArr));
+        //return null;
 
     }
 
     public Boolean contains(Integer valueToAdd) {
 
-        Boolean a = answer.contains(valueToAdd);
-        return a;
+        //Boolean a = answer.contains(valueToAdd);
+        return answer.contains(valueToAdd);
     }
 }

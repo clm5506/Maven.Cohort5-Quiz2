@@ -10,10 +10,11 @@ public class IntegerArrayUtilities {
 
     public Integer[] range(int start, int stop) {
         Integer[] ans = new Integer[(stop-start)+1];
-      //  Integer[] ans = new Integer[stop];
 
-        for(int i = start; i <= stop; i++){
-           ans[i] = i;
+        int length = (stop - start) + 1;
+        ans[0] = start;
+        for(int i = 1; i < length; i++){
+           ans[i] = start+i;
         }
         return ans;
     }

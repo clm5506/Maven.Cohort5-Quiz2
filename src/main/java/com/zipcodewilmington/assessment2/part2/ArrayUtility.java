@@ -42,7 +42,7 @@ public class ArrayUtility {
         int counter= 0;
 
         for(int i = 0; i < array1.length; i++) {
-            if(array1[i].equals(valueToEvaluate)) {
+            if(valueToEvaluate.equals(array1[i])) {
                 counter++;
             }
         }
@@ -52,7 +52,7 @@ public class ArrayUtility {
 
     public Integer mostCommon(Integer[] array) {
         Integer num = 0;
-        Integer mostCommon = null;
+        Integer mostCommon = 0;
 
         for (Integer o : array) {
             int temp = countOccurHelper(array, o);
