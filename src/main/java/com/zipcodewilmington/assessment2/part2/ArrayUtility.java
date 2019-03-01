@@ -17,16 +17,23 @@ public class ArrayUtility {
     }
 
     public Integer[] rotate(Integer[] array, Integer index) {
-       List<Integer> ans = new ArrayList<>(Arrays.asList(array));
-
-        Integer numToRemove = ans.get(index);
-        ans.remove(index);
-
-        ans.add(0,numToRemove);
-
-        return ans.toArray(new Integer[ans.size()]);
 
 
+//        Integer numToRemove = ans.get(index);
+//        ans.remove(index);
+//        ans.add(0,numToRemove);
+//        int length = answer.size();
+//        answer = answer.subList(index,array.length-1);
+        ArrayList<Integer> answer = new ArrayList<>(Arrays.asList(array));
+        ArrayList<Integer> temp = new ArrayList<>(Arrays.asList());
+
+        for(int i = 0; i < index; i++ ){
+            temp.add(array[i]);
+            answer.remove(0);
+        }
+
+        answer.addAll(temp);
+        return answer.toArray(new Integer[answer.size()]);
 
     }
 
@@ -38,19 +45,32 @@ public class ArrayUtility {
         return num1+num2;
     }
 
+    //converts Integer[] to ArrayList and calls other countOccurHelper
     public Integer countOccurHelper(Integer[] array1,Integer valueToEvaluate){
+
+        ArrayList<Integer> newArray = new ArrayList<Integer>(Arrays.asList(array1));
+        return countOccurHelper(newArray,valueToEvaluate);
+    }
+
+    public Integer countOccurHelper(ArrayList<Integer> array1,Integer valueToEvaluate){
         int counter= 0;
 
-        for(int i = 0; i < array1.length; i++) {
-            if(valueToEvaluate.equals(array1[i])) {
+        for(int i = 0; i < array1.size(); i++) {
+            if(valueToEvaluate == array1.get(i)) {
                 counter++;
             }
         }
         return counter;
     }
 
-
+    //converts Integer[] to ArrayList and calls other mostCommon
     public Integer mostCommon(Integer[] array) {
+        ArrayList<Integer> newArray = new ArrayList<Integer>(Arrays.asList(array));
+        return mostCommon(newArray);
+    }
+
+    public Integer mostCommon(ArrayList<Integer> array) {
+
         Integer num = 0;
         Integer mostCommon = 0;
 
